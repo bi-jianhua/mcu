@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="pers.bjh.mcu.dao.CharacterDao">
+
+    <!-- 使用二级缓存 -->
+    <cache></cache>
+
+    <insert id="addCharacter">
+        INSERT INTO t_character(id,code,name,nickname,sex,actor)
+          VALUES(uuid(),#{code},#{name},#{nickname},#{sex},#{actor});
+    </insert>
+
+</mapper>
