@@ -12,4 +12,8 @@
           VALUES(uuid(),#{code},#{name},#{nickname},#{sex},#{actor});
     </insert>
 
+    <select id="getCharacterForList" resultType="character">
+        SELECT * FROM t_character ORDER BY code;
+    </select>
+
 </mapper>

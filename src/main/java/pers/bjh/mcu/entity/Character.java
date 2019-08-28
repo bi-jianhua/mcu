@@ -2,11 +2,13 @@ package pers.bjh.mcu.entity;
 
 import lombok.*;
 
+import java.io.Serializable;
+
 /**
  * 人物   对应表 t_character
  */
 @Data
-public class Character {
+public class Character implements Serializable {
 
     // 主键
     private String id;

@@ -10,6 +10,8 @@ import org.springframework.web.servlet.ModelAndView;
 import pers.bjh.mcu.entity.Character;
 import pers.bjh.mcu.service.CharacterService;
 
+import java.util.List;
+
 @RestController
 public class CharacterController {
 
@@ -23,6 +25,8 @@ public class CharacterController {
         logger.debug("进入 CharacterController 的 index 方法");
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("index");
+        List<Character> characters = characterService.getCharacterForList();
+        modelAndView.addObject("characters", characters);
         logger.debug("离开 CharacterController 的 index 方法");
         return modelAndView;
     }

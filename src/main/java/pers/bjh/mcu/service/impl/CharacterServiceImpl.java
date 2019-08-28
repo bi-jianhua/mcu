@@ -6,6 +6,8 @@ import pers.bjh.mcu.dao.CharacterDao;
 import pers.bjh.mcu.entity.Character;
 import pers.bjh.mcu.service.CharacterService;
 
+import java.util.List;
+
 @Service
 public class CharacterServiceImpl implements CharacterService {
 
@@ -15,6 +17,11 @@ public class CharacterServiceImpl implements CharacterService {
     @Override
     public boolean addCharacter(Character c) {
         return characterDao.addCharacter(c);
+    }
+
+    @Override
+    public List<Character> getCharacterForList() {
+        return characterDao.getCharacterForList();
     }
 
 }
