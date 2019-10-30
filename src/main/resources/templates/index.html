@@ -6,40 +6,40 @@
 </head>
 <body>
 
-    <form action="/character" method="post">
-        code: <input type="text" name="code"><br>
-        name: <input type="text" name="name"><br>
-        nickname: <input type="text" name="nickname"><br>
-        sex: <select name="sex">
-            <option value="0">0</option>
-            <option value="1" selected>1</option>
-            <option value="2">2</option>
-        </select><br>
-        actor: <input type="text" name="actor"><br>
-        <button type="submit">save</button>
-    </form>
+<form action="/character" method="post">
+    code: <input type="text" name="code"><br>
+    name: <input type="text" name="name"><br>
+    nickname: <input type="text" name="nickname"><br>
+    sex: <select name="sex">
+    <option value="0">0</option>
+    <option value="1" selected>1</option>
+    <option value="2">2</option>
+</select><br>
+    actor: <input type="text" name="actor"><br>
+    <button type="submit">save</button>
+</form>
 
-    <br><br>
+<br><br>
 
-    <div>
-        <table cellspacing="0" cellpadding="10" border="1">
-            <tr>
-                <th>编号</th>
-                <th>人物</th>
-                <th>外号</th>
-                <th>性别</th>
-                <th>扮演者</th>
-            </tr>
-            <tr th:each="cha : ${characters}">
-                <td th:text="${cha.code}"></td>
-                <td th:text="${cha.name}"></td>
-                <td th:text="${cha.nickname}"></td>
-                <td th:text="${cha.sex} == '0' ? '女' : (${cha.sex} == '1' ? '男' : '不明')"
-                    th:style="'color:' + @{(${cha.sex} == '0' ? 'red' : (${cha.sex} == '1' ? 'blue' : 'purple'))} + ''"></td>
-                <td th:text="${cha.actor}"></td>
-            </tr>
-        </table>
-    </div>
+<div>
+    <table cellspacing="0" cellpadding="10" border="1">
+        <tr>
+            <th>编号</th>
+            <th>人物</th>
+            <th>外号</th>
+            <th>性别</th>
+            <th>扮演者</th>
+        </tr>
+        <tr th:each="cha : ${characters}">
+            <td th:text="${cha.code}"></td>
+            <td th:text="${cha.name}"></td>
+            <td th:text="${cha.nickname}"></td>
+            <td th:text="${cha.sex} == '0' ? '女' : (${cha.sex} == '1' ? '男' : '不明')"
+                th:style="'color:' + @{(${cha.sex} == '0' ? 'red' : (${cha.sex} == '1' ? 'blue' : 'purple'))} + ''"></td>
+            <td th:text="${cha.actor}"></td>
+        </tr>
+    </table>
+</div>
 
 </body>
 </html>
